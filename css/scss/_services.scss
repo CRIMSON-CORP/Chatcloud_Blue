@@ -8,6 +8,12 @@ div#sevices {
         font-weight: 600;
     }
     .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 320px);
+        gap: 30px;
+        justify-content: space-around;
+        max-width: 1450px;
+        margin: auto;
         .grid_item {
             width: 320px;
             height: 500px;
@@ -52,21 +58,46 @@ div#sevices {
                     background: none;
                     font-size: 2em;
                     padding: 0.5em 1em;
+                    transition: 0.3s ease-out 0.3s;
+                    border-radius: 5px;
+
+                    span {
+                        display: inline-block;
+                        transition: 0.3s ease-out;
+                        position: relative;
+                        top: 2px;
+                        left: 5px;
+                    }
                     &::before {
                         content: "";
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 4em;
+                        width: 3.5em;
                         height: 100%;
                         background: #f5f5f5;
                         z-index: 1;
+                        transition: 0.3s ease-out;
                     }
 
                     a {
                         position: relative;
                         z-index: 2;
                         color: #444;
+                        transition: 0.3s ease-out;
+                    }
+
+                    &:hover::before {
+                        left: calc(100% - 3.5em);
+                        transform: scaleX(0);
+                    }
+
+                    &:hover {
+                        background: $main;
+                    }
+
+                    &:hover a {
+                        color: white;
                     }
                 }
             }
@@ -82,14 +113,33 @@ div#sevices {
                 left: 20%;
                 transform: translateY(-100%);
                 transition: 0.3s ease-out;
+                pointer-events: none;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 400px;
+                height: 400px;
+                background: $main;
+                top: 60%;
+                left: 40%;
+                opacity: 0.1;
+                border-radius: 50%;
+                transition: 0.3s ease-out;
+                pointer-events: none;
+                transform: scale(0.4);
+                opacity: 0;
             }
 
             &:hover {
                 box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            &:hover::before {
-                transform: translateY(0%);
+                &::before {
+                    transform: translateY(0%);
+                }
+                &::after {
+                    transform: scale(1);
+                    opacity: 0.1;
+                }
             }
         }
     }

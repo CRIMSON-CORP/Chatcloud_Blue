@@ -1,0 +1,70 @@
+@import "./utils";
+
+section#contact {
+    padding: 0;
+    height: 90vh;
+    .info {
+        background: $main;
+        padding: 50px;
+        color: white;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        ul {
+            margin-top: 50px;
+            li {
+                display: flex;
+                gap: 30px;
+                margin-bottom: 30px;
+                align-items: center;
+                span {
+                    font-size: 40px;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        .social_links {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+
+            span {
+                font-size: 24px;
+                color: white;
+                margin-right: 20px;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+
+        &::before {
+            width: 700px;
+            height: 700px;
+            background: #3760d3;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 60%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        &::after {
+            width: 250px;
+            height: 250px;
+            background: #678df8;
+            bottom: 0;
+            right: 0;
+            transform: translate(-35%, -30%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    }
+}

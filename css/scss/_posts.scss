@@ -1,0 +1,19 @@
+@import "./utils";
+
+section#posts {
+    h1 {
+        color: $main;
+    }
+
+    .grid {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+        }
+    }
+}
