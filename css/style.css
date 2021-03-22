@@ -1,0 +1,216 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display";
+}
+
+.pop {
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display";
+}
+
+.pop {
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#hero {
+  position: relative;
+  height: 100vh;
+}
+
+#hero::before {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background: #2e54bf;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navlinkItem {
+  margin: 0px 5px;
+  display: inline-block;
+}
+
+.navlinkItem a {
+  color: #2e54bf !important;
+  padding: 6px 12px;
+  position: relative;
+}
+
+.navlinkItem a::before {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #2e54bf;
+  left: 0;
+  content: "";
+  border-radius: 5px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.navlinkItem a:hover::before, .navlinkItem a.active::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.navlinkItem a.active {
+  font-weight: bold;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+.hero_slider {
+  --offsetX: 100px;
+  --offsetY: 70px;
+  position: absolute;
+  top: var(--offsetY);
+  left: var(--offsetX);
+  right: var(--offsetX);
+  bottom: var(--offsetY);
+}
+
+.hero_slider .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hero_slider .background::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #2e54bf;
+  content: "";
+  z-index: 3;
+  opacity: 0.4;
+}
+
+.hero_slider .background img {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: absolute;
+}
+
+.hero_slider .content {
+  position: relative;
+  z-index: 5;
+  color: white;
+}
+
+.hero_slider .content h1 {
+  font-weight: 600;
+  font-size: 85px;
+}
+
+.hero_slider .content p {
+  max-width: 60%;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.hero_slider .content button.slide {
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  border: none;
+  outline: none;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #2e54bf;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.13);
+}
+
+.hero_slider .content button.slide span.text {
+  z-index: 2;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.hero_slider .content button.slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2e54bf;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 0.25rem;
+}
+
+.hero_slider .content button.slide:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.hero_slider .content button.slide:hover {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
