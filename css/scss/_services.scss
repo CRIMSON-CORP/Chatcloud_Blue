@@ -1,0 +1,96 @@
+@import "./utils";
+
+div#sevices {
+    .header h1 {
+        padding: 4rem;
+        background: $main;
+        color: white;
+        font-weight: 600;
+    }
+    .grid {
+        .grid_item {
+            width: 320px;
+            height: 500px;
+            padding: 3em 2em;
+            font-size: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: box-shadow 0.3s ease-out;
+            overflow: hidden;
+
+            .icon {
+                font-size: 7em;
+                color: $main;
+                margin-bottom: 1.625rem;
+            }
+
+            .content {
+                color: #444;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h3 {
+                    font-weight: bold;
+                    font-size: 3em;
+                    margin-bottom: 20px;
+                }
+                p {
+                    font-size: 1.8em;
+                }
+            }
+
+            .cta {
+                button {
+                    position: relative;
+                    margin-top: auto;
+                    display: inline;
+                    float: right;
+                    z-index: 3;
+                    font-weight: bolder;
+                    background: none;
+                    font-size: 2em;
+                    padding: 0.5em 1em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 4em;
+                        height: 100%;
+                        background: #f5f5f5;
+                        z-index: 1;
+                    }
+
+                    a {
+                        position: relative;
+                        z-index: 2;
+                        color: #444;
+                    }
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 60%;
+                border-radius: 0px 0px 5px 5px;
+                height: 8px;
+                background: $main;
+                top: 0;
+                left: 20%;
+                transform: translateY(-100%);
+                transition: 0.3s ease-out;
+            }
+
+            &:hover {
+                box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            &:hover::before {
+                transform: translateY(0%);
+            }
+        }
+    }
+}
