@@ -18,6 +18,7 @@ p {
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -75,5 +76,25 @@ section {
     &::before {
         position: absolute;
         content: "";
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 3.5rem 25px;
+    }
+}
+
+@media (max-width: 1000px) {
+    section {
+        .content {
+            h1 {
+                font-size: 45px !important;
+            }
+            p {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+        }
     }
 }

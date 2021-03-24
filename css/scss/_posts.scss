@@ -7,13 +7,38 @@ section#posts {
 
     .grid {
         margin-top: 4rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5%;
+        & > div {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            flex-wrap: wrap;
+            flex-direction: column;
+            min-width: 150px;
+        }
         img {
             width: 100%;
             height: auto;
-            margin-bottom: 50px;
+        }
+
+        .offset {
+            margin-top: 5%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .grid {
+            gap: 1rem;
+            margin-top: 2rem;
+            grid-template-columns: 1fr;
+            img {
+                margin-bottom: 20px;
+            }
+            .offset {
+                margin-top: 0px;
+            }
         }
     }
 }

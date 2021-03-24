@@ -2,14 +2,20 @@
 
 section#contact {
     padding: 0;
-    height: 90vh;
+    min-height: 100vh;
+    .row {
+        min-height: 100vh;
+    }
     .info {
         background: $main;
         padding: 50px;
         color: white;
-        height: 100%;
         position: relative;
         overflow: hidden;
+        .wrapper {
+            z-index: 3;
+            position: relative;
+        }
         ul {
             margin-top: 50px;
             li {
@@ -22,6 +28,7 @@ section#contact {
                 }
                 p {
                     margin: 0;
+                    width: 100%;
                 }
             }
         }
@@ -50,21 +57,137 @@ section#contact {
             background: #3760d3;
             bottom: 0;
             right: 0;
-            transform: translate(50%, 60%);
+            transform: translate(60%, 60%);
             border-radius: 50%;
             z-index: 0;
             pointer-events: none;
         }
         &::after {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             background: #678df8;
             bottom: 0;
             right: 0;
-            transform: translate(-35%, -30%);
+            transform: translate(-40%, -40%);
             border-radius: 50%;
             z-index: 0;
             pointer-events: none;
         }
+    }
+
+    .form {
+        position: relative;
+        span.bx {
+            color: $main;
+            position: absolute;
+            font-size: 30rem;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .form-group {
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                background: $main;
+                height: 3px;
+                width: 100%;
+                border-radius: 10px;
+            }
+            input {
+                border: none;
+                outline: none;
+                box-shadow: none;
+                font-size: 24px;
+                padding: 8px 3px;
+                background: none;
+                &::-webkit-input-placeholder {
+                    color: black;
+                    opacity: 0.3;
+                }
+            }
+            label {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 33px;
+                color: #555555;
+            }
+
+            textarea {
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 24px;
+                background: none;
+                height: 200px;
+                box-shadow: none;
+                resize: none;
+                &::-webkit-input-placeholder {
+                    color: black;
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        button[type="submit"].form-submit {
+            background: $main;
+            color: white;
+            padding: 10px 26px;
+            font-size: 22px;
+            flex-grow: 0;
+            align-self: flex-end;
+            border-radius: 5px;
+        }
+    }
+}
+
+section#footer {
+    background: $main;
+    color: white;
+    padding: 2rem;
+    font-weight: bolder;
+    margin-top: 50px;
+    font-size: 22px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    section#contact .info {
+        min-height: 600px;
+    }
+
+    section#contact .form {
+        span.bx {
+            color: $main;
+            position: absolute;
+            font-size: 18rem;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        button[type="submit"].form-submit {
+            font-size: 16px;
+        }
+    }
+    section#footer {
+        justify-content: center;
+    }
+}
+@media (max-width: 400px) {
+    section#contact .info {
+        min-height: 600px;
+        padding: 30px;
     }
 }
