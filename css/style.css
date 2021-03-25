@@ -231,6 +231,11 @@ header {
   top: 0;
   left: 0;
   z-index: -1;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  opacity: 0;
 }
 
 .navlinkItem {
@@ -283,6 +288,8 @@ header {
   left: var(--offsetX);
   right: var(--offsetX);
   bottom: var(--offsetY);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 .hero_slider .background {
@@ -332,8 +339,8 @@ header {
 
 .mobile_nav {
   display: none;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 20px;
   z-index: 100;
   position: relative;
   cursor: pointer;

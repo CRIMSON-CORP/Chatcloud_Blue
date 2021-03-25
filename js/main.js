@@ -17,7 +17,13 @@ const Nav = get("nav");
 const NavLinks = getAll("nav a");
 
 // Hero Section
-const hero = get("#her");
+const hero = get("#her0");
+const span_blue = get("#hero span.bg");
+const slider = get(".hero_slider");
+const content = get("#hero .content");
+const hero_h1 = get("#hero h1");
+const hero_p = get("#hero p");
+const hero_button = get("#hero button");
 
 // GSAP
 //// Navigation timelines
@@ -53,6 +59,14 @@ ham.addEventListener("click", () => {
 });
 
 // Hero section timeline Expanded
+Hero_section_timeline.to(span_blue, { opacity: 1, duration: 1 })
+    .to(span_blue, { scaleX: 1, ease: "expo.out", duration: 2 }, "-=.75")
+    .to(
+        slider,
+        { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", ease: "expo.out", duration: 2 },
+        "-=1.75"
+    )
+    .from([hero_h1, hero_p, hero_button], { opacity: 0, y: 50, stagger: { each: 0.25 } }, "-=1");
 
 // For label
 const image_labels = document.querySelectorAll("label");
@@ -80,6 +94,5 @@ function showSlides(n) {
     for (i = 0; i < slides.length; i++) {
         slides[i].checked = false;
     }
-    console.log(1);
     slides[slideIndex - 1].checked = true;
 }
