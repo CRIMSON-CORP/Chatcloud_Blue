@@ -39,7 +39,7 @@ mobile_click
 nav_timeline
     .to(Nav, { left: 0, opacity: 1, duration: 0.5 })
     .from(NavLinks, { y: 100, duration: 1, ease: "Power4.out()" })
-    .to(NavLinks, { opacity: 1, duration: 0.75, ease: "Power4.out()" }, "-=.5");
+    .to(NavLinks, { opacity: 1, duration: 0.75, ease: "Power4.out()" }, "-=.75");
 
 ham.addEventListener("click", () => {
     ham.classList.toggle("open");
@@ -53,3 +53,33 @@ ham.addEventListener("click", () => {
 });
 
 // Hero section timeline Expanded
+
+// For label
+const image_labels = document.querySelectorAll("label");
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+    showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.querySelectorAll("input[type='radio'");
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].checked = false;
+    }
+    console.log(1);
+    slides[slideIndex - 1].checked = true;
+}

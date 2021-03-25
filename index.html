@@ -32,7 +32,7 @@
             </header>
             <div class="hero_slider d-flex align-items-center justify-content-start">
                 <div class="background">
-                    <img src="/img/education.jpg" alt="" />
+                    <img src="img/education.jpg" alt="" />
                 </div>
                 <div class="content px-5">
                     <h1 class="font-weight-bold">Education</h1>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <section id="about">
-            <img src="./img/about.jpg" alt="" class="bg" />
+            <img src="img/about.jpg" alt="" class="bg" />
             <div class="text-center content">
                 <h1 class="mb-4 font-weight-bold">
                     About <br />
@@ -71,6 +71,53 @@
                 <button class="slide px-3 py-2 text-uppercase rounded">
                     <span class="text">talk to us now</span>
                 </button>
+            </div>
+        </section>
+        <section id="industries">
+            <div class="text-center content">
+                <h1 class="mb-4 font-weight-bold text-uppercase">INDUSTRIES WE SERVE</h1>
+                <p class="ml-auto mr-auto mb-4">
+                    We serve numerous industries including: Law Firms, Health Care, Dealerships,
+                    E-Commerce Businesses, Education, Real Estate, Home Improvements and more. Our
+                    Industry trained representatives will engage with your customers through live
+                    chat and provide you with a Qualified Lead including their Contact information,
+                    Location and Concerns.
+                </p>
+
+                <div class="slider" id="slider">
+                    <button class="prev" onclick="plusSlides(-1)">
+                        <span class="fa fa-caret-left"></span>
+                    </button>
+                    <button class="next" onclick="plusSlides(1)">
+                        <span class="fa fa-caret-right"></span>
+                    </button>
+                    <input type="radio" name="slider" id="s1" class="input"/>
+                    <input type="radio" name="slider" id="s2" class="input"/>
+                    <input type="radio" name="slider" id="s3" class="input"/>
+                    <input type="radio" name="slider" id="s4" class="input"/>
+                    <input type="radio" name="slider" id="s5" class="input"/>
+                    <input type="radio" name="slider" id="s6" class="input"/>
+                    <input type="radio" name="slider" id="s7" class="input"/>
+                    <input type="radio" name="slider" id="s8" class="input" checked />
+
+                    <label for="s1" id="slide1"><img src="img/industries/1.jpg" alt="" /></label>
+                    <label for="s2" id="slide2"><img src="img/industries/2.jpg" alt="" /></label>
+                    <label for="s3" id="slide3"><img src="img/industries/3.jpg" alt="" /></label>
+                    <label for="s4" id="slide4"><img src="img/industries/4.jpg" alt="" /></label>
+                    <label for="s5" id="slide5"><img src="img/industries/5.jpg" alt="" /></label>
+                    <label for="s6" id="slide6"><img src="img/industries/6.jpg" alt="" /></label>
+                    <label for="s7" id="slide7"><img src="img/industries/7.jpg" alt="" /></label>
+                    <label for="s8" id="slide8"><img src="img/industries/8.jpg" alt="" /></label>
+
+                    <div class="s1 labels"><h1>Legal</h1></div>
+                    <div class="s2 labels"><h1>Home Improvement</h1></div>
+                    <div class="s3 labels"><h1>Health Care</h1></div>
+                    <div class="s4 labels"><h1>Event Planner</h1></div>
+                    <div class="s5 labels"><h1>Education</h1></div>
+                    <div class="s6 labels"><h1>E-commerce</h1></div>
+                    <div class="s7 labels"><h1>Auto Dealer</h1></div>
+                    <div class="s8 labels"><h1>Real Estate</h></div>
+                </div>
             </div>
         </section>
         <div id="services">
@@ -193,13 +240,13 @@
             <h1 class="text-center text-uppercase font-weight-bold">latest posts</h1>
             <div class="grid">
                 <div>
-                    <img src="/img/posts/4.jpg" alt="" />
-                    <img src="/img/posts/5.jpg" alt="" />
-                    <img src="/img/posts/1.jpg" alt="" />
+                    <img src="img/posts/4.jpg" alt="" />
+                    <img src="img/posts/5.jpg" alt="" />
+                    <img src="img/posts/1.jpg" alt="" />
                 </div>
                 <div class="offset">
-                    <img src="/img/posts/3.jpg" alt="" />
-                    <img src="/img/posts/2.jpg" alt="" />
+                    <img src="img/posts/3.jpg" alt="" />
+                    <img src="img/posts/2.jpg" alt="" />
                 </div>
             </div>
         </section>
@@ -278,6 +325,7 @@
         <section id="footer">
             <span>2020 CHATCLOUD</span>
         </section>
+        <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/gsap/gsap.min.js"></script>
         <script src="js/main.js"></script>
     </body>
