@@ -155,10 +155,18 @@ section#industries {
 @media (max-width: 360px) {
     section#industries #slider {
         margin: 0;
-        min-height: 20vh;
+        min-height: 35vh;
 
         .labels {
             bottom: 20%;
+        }
+        button {
+            &.next {
+                right: -10%;
+            }
+            &.prev {
+                left: -10%;
+            }
         }
     }
 }

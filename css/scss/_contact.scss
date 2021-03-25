@@ -2,9 +2,9 @@
 
 section#contact {
     padding: 0;
-    min-height: 100vh;
-    .row {
-        min-height: 100vh;
+
+    .rows {
+        min-height: 700px;
     }
     .info {
         background: $main;

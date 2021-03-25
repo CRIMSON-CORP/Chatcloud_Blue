@@ -15,6 +15,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -121,6 +122,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -220,12 +222,13 @@ header {
 #hero {
   position: relative;
   height: 100vh;
+  max-height: 700px;
 }
 
 #hero span.bg {
   position: absolute;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   background: #2e54bf;
   content: "";
   top: 0;
@@ -480,6 +483,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -633,6 +637,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -758,6 +763,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -1032,10 +1038,16 @@ section#industries #slider #s8:checked ~ .s8 h1 {
 @media (max-width: 360px) {
   section#industries #slider {
     margin: 0;
-    min-height: 20vh;
+    min-height: 35vh;
   }
   section#industries #slider .labels {
     bottom: 20%;
+  }
+  section#industries #slider button.next {
+    right: -10%;
+  }
+  section#industries #slider button.prev {
+    left: -10%;
   }
 }
 
@@ -1056,6 +1068,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -1354,6 +1367,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -1515,6 +1529,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -1606,11 +1621,10 @@ section::before {
 
 section#contact {
   padding: 0;
-  min-height: 100vh;
 }
 
-section#contact .row {
-  min-height: 100vh;
+section#contact .rows {
+  min-height: 700px;
 }
 
 section#contact .info {
