@@ -5,6 +5,7 @@ section#contact {
 
     .rows {
         min-height: 700px;
+        display: flex;
     }
     .info {
         background: $main;
@@ -183,6 +184,10 @@ section#footer {
     }
     section#footer {
         justify-content: center;
+    }
+
+    .rows {
+        flex-direction: column;
     }
 }
 @media (max-width: 400px) {
