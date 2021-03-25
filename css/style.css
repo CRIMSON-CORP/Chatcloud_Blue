@@ -1027,11 +1027,15 @@ section#industries #slider #s8:checked ~ .s8 h1 {
   section#industries #slider .labels h1 {
     font-size: 28px !important;
   }
-  section#industries #slider button.next {
-    right: -10%;
+}
+
+@media (max-width: 360px) {
+  section#industries #slider {
+    margin: 0;
+    min-height: 20vh;
   }
-  section#industries #slider button.prev {
-    left: -10%;
+  section#industries #slider .labels {
+    bottom: 20%;
   }
 }
 
