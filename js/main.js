@@ -69,12 +69,7 @@ Hero_section_timeline.to(span_blue, { opacity: 1, duration: 1 })
             duration: 1.5,
         },
         "-=1.5"
-    )
-    .from([hero_h1, hero_p, hero_button], { opacity: 0, y: 50, stagger: { each: 0.125 } }, "-=.5");
-
-setInterval(() => {
-    Hero_section_timeline.play();
-}, 3000);
+    );
 
 // For label
 const image_labels = document.querySelectorAll("label");
@@ -93,6 +88,7 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.querySelectorAll("input[type='radio']");
+    if (image_labels == null) return;
     if (n > slides.length) {
         slideIndex = 1;
     }
@@ -116,4 +112,18 @@ $(document).ready(function () {
         closeColor: "#fff",
         closeBackground: "#000000ff",
     });
+});
+
+// hero slider
+const swiper = new Swiper(".swiper-container", {
+    // Optional parameters
+    direction: "vertical",
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoplay: {
+        delay: 5000,
+    },
+    allowTouchMove: false,
+    speed: 1300,
 });
