@@ -60,13 +60,21 @@ ham.addEventListener("click", () => {
 
 // Hero section timeline Expanded
 Hero_section_timeline.to(span_blue, { opacity: 1, duration: 1 })
-    .to(span_blue, { scaleX: 1, ease: "expo.out", duration: 2 }, "-=.75")
+    .to(span_blue, { scaleX: 1, ease: "power4.inOut", duration: 2 }, "-=.75")
     .to(
         slider,
-        { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", ease: "expo.out", duration: 1.5 },
-        "-=1.75"
+        {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            ease: "power4.inOut",
+            duration: 1.5,
+        },
+        "-=1.5"
     )
-    .from([hero_h1, hero_p, hero_button], { opacity: 0, y: 50, stagger: { each: 0.25 } }, "-=1");
+    .from([hero_h1, hero_p, hero_button], { opacity: 0, y: 50, stagger: { each: 0.125 } }, "-=.5");
+
+setInterval(() => {
+    Hero_section_timeline.play();
+}, 3000);
 
 // For label
 const image_labels = document.querySelectorAll("label");
@@ -84,7 +92,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
     var i;
-    var slides = document.querySelectorAll("input[type='radio'");
+    var slides = document.querySelectorAll("input[type='radio']");
     if (n > slides.length) {
         slideIndex = 1;
     }
@@ -96,3 +104,16 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].checked = true;
 }
+
+// FOR VENOBOX
+$(document).ready(function () {
+    $(".venobox").venobox({
+        framewidth: "70vw",
+        titleattr: "data-title",
+        infinigall: true,
+        spinner: "wave",
+        spinColor: "#fff",
+        closeColor: "#fff",
+        closeBackground: "#000000ff",
+    });
+});

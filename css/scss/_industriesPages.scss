@@ -1,0 +1,61 @@
+@import "./utils";
+
+body.industries {
+    background: $main;
+
+    #hero {
+        background: white;
+    }
+    main {
+        .grid {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            gap: 50px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 45% 50%;
+                max-height: 80vh;
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            }
+            .content {
+                color: white;
+                padding-right: 100px;
+                .subheader {
+                    font-size: 16px;
+                }
+                .header {
+                    font-size: 32px;
+                    font-weight: bold;
+                    line-height: 1.5 !important;
+                }
+                .content_footer {
+                    margin-top: 60px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    body.industries {
+        main {
+            .grid {
+                margin-top: 0 !important;
+                grid-template-columns: auto;
+                gap: 0;
+                .content {
+                    padding: 50px 30px;
+                    .subheader {
+                        font-size: 12px;
+                    }
+
+                    .header {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
