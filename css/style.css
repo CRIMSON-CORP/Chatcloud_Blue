@@ -61,18 +61,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -168,18 +170,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -314,7 +318,8 @@ header {
   opacity: 0.4;
 }
 
-.hero_slider .background img {
+.hero_slider .background img,
+.hero_slider .background video {
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -556,21 +561,35 @@ header {
   overflow: hidden;
 }
 
-#hero .hero_slider .hero-slider-wrapper .hero-slider-item img {
+#hero .hero_slider .hero-slider-wrapper .hero-slider-item img,
+#hero .hero_slider .hero-slider-wrapper .hero-slider-item video {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  -webkit-transition: -webkit-transform 1s ease-out 0.75s;
-  transition: -webkit-transform 1s ease-out 0.75s;
-  transition: transform 1s ease-out 0.75s;
-  transition: transform 1s ease-out 0.75s, -webkit-transform 1s ease-out 0.75s;
+  -webkit-transition: -webkit-transform 2s cubic-bezier(0, 0, 0, 0.99) 0.75s;
+  transition: -webkit-transform 2s cubic-bezier(0, 0, 0, 0.99) 0.75s;
+  transition: transform 2s cubic-bezier(0, 0, 0, 0.99) 0.75s;
+  transition: transform 2s cubic-bezier(0, 0, 0, 0.99) 0.75s, -webkit-transform 2s cubic-bezier(0, 0, 0, 0.99) 0.75s;
+}
+
+#hero .hero_slider .hero-slider-wrapper .content {
+  -webkit-transition: -webkit-clip-path 2s cubic-bezier(0, 0, 0, 0.96);
+  transition: -webkit-clip-path 2s cubic-bezier(0, 0, 0, 0.96);
+  transition: clip-path 2s cubic-bezier(0, 0, 0, 0.96);
+  transition: clip-path 2s cubic-bezier(0, 0, 0, 0.96), -webkit-clip-path 2s cubic-bezier(0, 0, 0, 0.96);
+  -webkit-transition-delay: 1.25s;
+          transition-delay: 1.25s;
+  -webkit-clip-path: circle(20px at 0% 0%);
+          clip-path: circle(20px at 0% 0%);
 }
 
 #hero .hero_slider .hero-slider-wrapper .content h1,
 #hero .hero_slider .hero-slider-wrapper .content p,
 #hero .hero_slider .hero-slider-wrapper .content button {
   opacity: 0;
-  -webkit-transition: all 0.75s ease-out;
-  transition: all 0.75s ease-out;
+  -webkit-transition: opacity 0.75s ease-out, -webkit-transform 0.75s ease-out;
+  transition: opacity 0.75s ease-out, -webkit-transform 0.75s ease-out;
+  transition: transform 0.75s ease-out, opacity 0.75s ease-out;
+  transition: transform 0.75s ease-out, opacity 0.75s ease-out, -webkit-transform 0.75s ease-out;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
 }
@@ -594,9 +613,15 @@ header {
           transition-delay: 1.5s;
 }
 
-#hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active img {
+#hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active img,
+#hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active video {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+#hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active .content {
+  -webkit-clip-path: circle(1000px at 0% 0%);
+          clip-path: circle(1000px at 0% 0%);
 }
 
 #hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active .content h1,
@@ -610,6 +635,13 @@ header {
 #hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active .content h1 {
   -webkit-transform: rotate(0deg) translateY(0px);
           transform: rotate(0deg) translateY(0px);
+}
+
+@media (max-width: 500px) {
+  #hero .hero_slider .hero-slider-wrapper .hero-slider-item.swiper-slide-active .content {
+    -webkit-clip-path: circle(500px at 0% 0%);
+            clip-path: circle(500px at 0% 0%);
+  }
 }
 
 h1,
@@ -675,18 +707,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -829,18 +863,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -955,18 +991,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -1272,18 +1310,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -1573,18 +1613,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -1694,10 +1736,10 @@ section#posts .grid a .back::before {
   -webkit-transform: translate(50%, -50%) scale(0);
           transform: translate(50%, -50%) scale(0);
   background: #3760d3;
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-  transition: -webkit-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out;
-  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.2, 1);
+  transition: -webkit-transform 1s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 1s cubic-bezier(0, 0, 0.2, 1);
 }
 
 section#posts .grid a .back:hover::before {
@@ -1788,18 +1830,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {
@@ -2126,18 +2170,20 @@ button.slide::before {
   z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 0.25rem;
 }
 
 button.slide:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 button.slide:hover {

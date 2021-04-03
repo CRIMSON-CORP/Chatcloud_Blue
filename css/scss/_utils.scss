@@ -58,13 +58,13 @@ button.slide {
         left: 0;
         z-index: 1;
         transform: scaleX(0);
-        transform-origin: left;
-        transition: 0.3s;
+        transform-origin: right;
+        transition: transform 0.3s;
         border-radius: 0.25rem;
     }
     &:hover::before {
         transform: scale(1);
-        transform-origin: right;
+        transform-origin: left;
     }
     &:hover {
         color: white;
