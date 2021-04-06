@@ -48,6 +48,12 @@ nav_timeline
     .to(NavLinks, { opacity: 1, duration: 0.75, ease: "Power4.out()" }, "-=.75");
 
 ham.addEventListener("click", () => {
+    const dropdown = document.querySelector(".dropdown");
+    if (dropdown.classList.contains("sublist_open")) {
+        gsap.to(".dropdown", { left: "100%", duration: 0.75 });
+        dropdown.classList.remove("sublist_open");
+        return;
+    }
     ham.classList.toggle("open");
     if (ham.classList.contains("open")) {
         mobile_click.play();
@@ -126,4 +132,32 @@ const swiper = new Swiper(".swiper-container", {
     },
     allowTouchMove: false,
     speed: 1300,
+});
+
+// Back to top button
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $(".back-to-top").fadeIn("slow");
+    } else {
+        $(".back-to-top").fadeOut("slow");
+    }
+});
+
+$(".back-to-top").click(function () {
+    $("html, body").animate(
+        {
+            scrollTop: 0,
+        },
+        1500,
+        "easeInOutExpo"
+    );
+    return false;
+});
+
+const ind_link = document.querySelector("#ind_dropList");
+
+ind_link.addEventListener("click", function (e) {
+    e.preventDefault();
+    gsap.to(".dropdown", { left: 0, duration: 0.75 });
+    document.querySelector(".dropdown").classList.add("sublist_open");
 });

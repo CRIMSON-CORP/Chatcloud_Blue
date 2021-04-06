@@ -15,7 +15,6 @@ body.industries {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
-                object-position: 45% 50%;
                 max-height: 80vh;
                 clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
             }
@@ -31,7 +30,7 @@ body.industries {
                     line-height: 1.5 !important;
                 }
                 .content_footer {
-                    margin-top: 60px;
+                    margin-top: 0px;
                 }
             }
         }
@@ -45,6 +44,9 @@ body.industries {
                 margin-top: 0 !important;
                 grid-template-columns: auto;
                 gap: 0;
+                img {
+                    object-position: unset !important;
+                }
                 .content {
                     padding: 50px 30px;
                     .subheader {
